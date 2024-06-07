@@ -31,6 +31,12 @@
             <lib name='${LINC_LUA_PATH}/lib/lua/lib/Android/libluajit-x86_64.a' if='HXCPP_X86_64' />
             <lib name='${LINC_LUA_PATH}/lib/lua/lib/Android/libluajit-64.a' if='HXCPP_ARM64' />
         </section>
+        <section if="iphoneos">
+			<lib name="${LINC_LUA_PATH}/lib/lua/lib/iPhone/libluajit-64.a" if="HXCPP_ARM64" />
+		</section>
+		<section if="iphonesim">
+			<lib name="${LINC_LUA_PATH}/lib/lua/lib/iPhone/libluajit-x86_64.a" if="HXCPP_ARM64 || HXCPP_X86_64" />
+		</section>
     </target>
 
 </xml>
